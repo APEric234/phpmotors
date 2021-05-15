@@ -1,0 +1,11 @@
+footer {
+  left: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 5px solid #333333;
+}
+
+footer * {
+  text-align: center;
+}
+/*# sourceMappingURL=footer.css.map */

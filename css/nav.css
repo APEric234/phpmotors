@@ -1,0 +1,19 @@
+nav {
+  background-color: #333333;
+}
+
+nav * {
+  padding: 3px;
+  color: #ffffff;
+  background-color: #333333;
+}
+
+nav a:hover {
+  background-color: #a6cbeb;
+  color: #333333;
+}
+
+nav li {
+  display: inline;
+}
+/*# sourceMappingURL=nav.css.map */

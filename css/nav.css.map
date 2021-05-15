@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,GAAG,CAAA;EAWD,gBAAgB,ECZC,OAAO;CDiBzB;;AAhBD,AACE,GADC,CACD,CAAC,CAAA;EACC,OAAO,EAAC,GAAG;EACX,KAAK,ECHG,OAAO;EDIf,gBAAgB,ECLD,OAAO;CDOvB;;AANH,AAOE,GAPC,CAOD,CAAC,AAAA,MAAM,CAAA;EACL,gBAAgB,ECPR,OAAO;EDQf,KAAK,ECVU,OAAO;CDWvB;;AAVH,AAYE,GAZC,CAYD,EAAE,CAAA;EACA,OAAO,EAAE,MAAM;CAChB",
+    "sources": [
+        "nav.scss",
+        "_colors.scss"
+    ],
+    "names": [],
+    "file": "nav.css"
+}

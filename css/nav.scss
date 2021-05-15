@@ -1,0 +1,18 @@
+@import 'colors';
+nav{
+  *{
+    padding:3px;
+    color:$light-text;
+    background-color: $header-background;
+
+  }
+  a:hover{
+    background-color: $dark-hover;
+    color:$header-background;
+  }
+  background-color: $header-background;
+  li{
+    display: inline;
+  }
+
+}
