@@ -1,5 +1,5 @@
 <?php
-function createConnection(){
+function phpMotorsConnect(){
  $server='localhost';
  $dbname='phpmotors';
  $username='iClient';
@@ -19,5 +19,4 @@ function createConnection(){
   exit;
  }
 }
-createConnection();
 ?>

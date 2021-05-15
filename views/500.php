@@ -7,11 +7,8 @@
 </head>
 
 <body>
-  <div class="top">
-    <div id="logo"><img src="../images/site/logo.png" alt="PHP motors"> </div>
-    <div id="account">My account</div>
-  </div>
-  <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
+
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
   <!--above line is import for nav-->
   <main><h1>Server Error</h1>
   
