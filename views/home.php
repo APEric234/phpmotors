@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" media="screen" href="css/main.css">
+  <link rel="stylesheet" media="screen" href="../css/main.css">
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
   <title>PHP Motors | Home Page</title>
 </head>
 
 <body>
   <div class="top">
-    <div id="logo"><img src="images/site/logo.png" alt="PHP motors"> </div>
+    <div id="logo"><img src="../images/site/logo.png" alt="PHP motors"> </div>
     <div id="account">My account</div>
   </div>
   
-  <?php require_once 'library/connections.php'; ?>
+  <?php require_once '../library/connections.php'; ?>
   <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
   <!--above line is import for nav-->
   <main>
     <h1> Welcome to PHP Motors</h1>
-    <img id="delorean" src="images/delorean.jpg" alt="">
+    <img id="delorean" src="../images/delorean.jpg" alt="">
     <div id="descr">
       <h2>DMC Delorean</h2>
       <ul>
@@ -52,10 +52,10 @@
     </div>
     <div class="content" id="upgrades">
     <h2>Delorean Upgrades</h2>
-      <div class="box"><div class="inner box"><img src="images/upgrades/flux-cap.png" alt=""></div><a href="#">Flux Capacitor</a></div>
-      <div class="box"><div class="inner box"><img src="images/upgrades/flame.jpg" alt=""> </div><a href="#">Flame Decals</a></div>
-      <div class="box"><div class="inner box"><img src="images/upgrades/bumper_sticker.jpg" alt=""></div><a href="#">Bumper Stickers</a></div>
-      <div class="box"><div class="inner box"><img src="images/upgrades/hub-cap.jpg" alt=""></div><a href="#">Hub Caps</a></div>
+      <div class="box"><div class="inner box"><img src="../images/upgrades/flux-cap.png" alt=""></div><a href="#">Flux Capacitor</a></div>
+      <div class="box"><div class="inner box"><img src="../images/upgrades/flame.jpg" alt=""> </div><a href="#">Flame Decals</a></div>
+      <div class="box"><div class="inner box"><img src="../images/upgrades/bumper_sticker.jpg" alt=""></div><a href="#">Bumper Stickers</a></div>
+      <div class="box"><div class="inner box"><img src="../images/upgrades/hub-cap.jpg" alt=""></div><a href="#">Hub Caps</a></div>
     </div>
     </div>
   </main>
