@@ -4,7 +4,7 @@
   <link rel="stylesheet" media="screen" href="../css/input.css">
   
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
-  <title>PHP Motors | Template</title>
+  <title>PHP Motors | Register</title>
 </head>
 
 <body>

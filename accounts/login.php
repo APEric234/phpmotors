@@ -5,7 +5,7 @@
   <link rel="stylesheet" media="screen" href="../css/input.css">
   
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
-  <title>PHP Motors | Template</title>
+  <title>PHP Motors | Login</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
   <input type="password" id="clientPassword" name="clientPassword"><br>
   <input type="submit" value="Login">
   
-  <a id="register" href="register.php">New? Register Here</a>
+  <a id="register" href="../accounts/?action=register">New? Register Here</a>
   </form>
   </main>
 
