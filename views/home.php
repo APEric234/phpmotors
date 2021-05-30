@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../css/main.css">
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
   <title>PHP Motors | Home Page</title>
 </head>
