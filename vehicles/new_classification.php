@@ -7,9 +7,12 @@
 </head>
 
 <body>
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; 
+if (!empty($_POST["error"])) {
+  echo  "<p>".$_POST["error"]."</p>";
+}?>
   <form name="form" action="/phpmotors/vehicles/index.php?action=addClassification" method="post">
-  <input type="text" name="subject" id="subject" value="classification">
+  <input type="text" name="subject" id="subject" placeholder="classification" required>
   <label for="subject">classification</label>
   <input type="submit" value="add classification">
   </form>
