@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="../css/main.css">
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
-  <title>PHP Motors | Home Page</title>
+  <title>PHP Motors | Add Classification</title>
 </head>
 
 <body>
@@ -17,6 +17,9 @@ if (!empty($_POST["error"])) {
   <input type="submit" value="add classification">
   </form>
   <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
-</body>
+  
   <a href="/phpmotors/vehicles/index.php?action=addCar">Want to add a car?</a>
+  
+  <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
+</body>
 </html>

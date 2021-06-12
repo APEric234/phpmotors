@@ -9,7 +9,7 @@
 <head>
   <link rel="stylesheet" href="../css/main.css">
   <meta name="viewport" content="width=device-width,inital-scale=1.0">
-  <title>PHP Motors | Home Page</title>
+  <title>PHP Motors | Add car</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@ if (!empty($_POST["error"])) {
     echo$_POST['make']; }?>" required>
   <br>
   <label for="model">Car model:</label>
-  <input type="text" name="model" id="model"value="<?php if(isset($_POST['model'])){
+  <input type="text" name="model" id="model" value="<?php if(isset($_POST['model'])){
     echo$_POST['model']; }?>" required>
   <br>
   <label for="desc">Car description:</label>
@@ -46,7 +46,7 @@ if (!empty($_POST["error"])) {
   <select id ="classification" name="classification" required>
   <?php
   $class=getClassificationsWithId();
-  $opttions="";
+  $opttions="<option value=\"\" label=\"Pick a Type\"></option>";
   Foreach($class as $clas){
     $opttions.="<option value=".$clas["classificationId"];
      if(isset($_POST['classification'])){
@@ -62,7 +62,6 @@ if (!empty($_POST["error"])) {
     }
     $opttions.=$clas["classificationName"]."</option>";
   }
-  $opttions.="</select>";
   echo $opttions;
   ?>
   
