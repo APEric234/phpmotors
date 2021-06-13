@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
 
 <body>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; 
+
 if (!empty($_POST["error"])) {
   echo  "<p>".$_POST["error"]."</p>";
 }?>

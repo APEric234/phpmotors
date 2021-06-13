@@ -14,11 +14,12 @@
 
 <body>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; 
+
 if (!empty($_POST["error"])) {
     echo  "<p>".$_POST["error"]."</p>";
   }
 ?>
-  <form name="form" action="/phpmotors/vehicles/index.php?action=carAdded" method="post" novalidate>
+  <form name="form" action="/phpmotors/vehicles/index.php?action=carAdded" method="post">
   <label for="make">Car make:</label>
   <input type="text" name="make" id="make" value="<?php if(isset($_POST['make'])){
     echo$_POST['make']; }?>" required>

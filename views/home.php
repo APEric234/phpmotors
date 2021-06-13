@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php
+?>
 <html lang="en">
 <head>
   <link rel="stylesheet" href="css/main.css">
