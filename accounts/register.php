@@ -9,11 +9,12 @@
 
 <body>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
   <!--above line is import for nav-->
   <main>
   <h1> Register</h1>
-  <form>
+  <form action="/phpmotors/accounts/index.php?action=makenew" method="post">
   <label for="clientEmail">Email: </label>
   
   <input type="text" id="clientEmail" name="clientEmail"><br>
@@ -23,8 +24,8 @@
   <input type="text" id="firstName" name="firstName"><br>
   <label for="lastName">Last Name: </label>
   <input type="text" id="lastName" name="lastName"><br>
-  
-  <input type="submit" value="register">
+  <input type="int" id="level" value=1 hidden>
+  <input type="submit">
   </form>
   </main>
 
