@@ -8,14 +8,14 @@ if(session_status() != PHP_SESSION_ACTIVE){
     }
   if(isset($_SESSION["first_name"])){
       
-    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/index.php?action=details\">Hello ".$_SESSION["first_name"]."</div>";
+    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/index.php?action=details\">Hello ".$_SESSION["first_name"]."</a>";
 
   }else{
 
-    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/?action=login\">My messing account</a></div>";
+    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/?action=login\">My messing account</a>";
   }
 
   ?>
   </div>
-  
+  </div>
   <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>

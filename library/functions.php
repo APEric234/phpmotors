@@ -63,7 +63,7 @@ function get_name($user_name){
 }
   function get_nav($classifications){
     $navList = '<ul>';
-    $navList .= "<li><a href='index.php' title='View the PHP Motors home page'>Home</a></li>";
+    $navList .= "<li><a href='../index.php' title='View the PHP Motors home page'>Home</a></li>";
     foreach ($classifications as $classification) {
      $navList .= "<li><a href='index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
     }

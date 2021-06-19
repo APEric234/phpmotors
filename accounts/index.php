@@ -47,6 +47,8 @@ $action = filter_input(INPUT_POST, 'action');
     include 'login.php';
    break;
   case "details":
+    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
+    session_start();
     include 'admin.php';
   
     break;

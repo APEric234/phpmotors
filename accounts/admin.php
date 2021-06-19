@@ -10,11 +10,10 @@
 <body>
 
 <?php
-session_start();
 if (!isset($_SESSION["first_name"])){
   header("location: index.php");
 }
-require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/headeSr.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
   <!--above line is import for nav-->
   <main>
   <h1> Hello <?php
@@ -48,6 +47,6 @@ echo "<a href='index.php?action=increaseLevel'>Elevate to admin</a>";
   <a href='index.php?action=Logout'>Logout</a>
 
   <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
-</body
+</body>
 
 </html>
