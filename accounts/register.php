@@ -19,7 +19,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
   
   <input type="text" id="clientEmail" name="clientEmail"><br>
   <label for="clientPassword">Password: </label>
-  <input type="password" id="clientPassword" name="clientPassword"><br>
+  <input type='password' id='clientPassword' name='clientPassword' min-length="8"  oninvalid="this.setCustomValidity('must have 1 number one uppper case character and be at least 8 digits')" oninput="this.setCustomValidity('')" pattern="^(?=.*?[A-Z])(?=.*?\d).*" required><br>
   <label for="firstName">First Name: </label>
   <input type="text" id="firstName" name="firstName"><br>
   <label for="lastName">Last Name: </label>

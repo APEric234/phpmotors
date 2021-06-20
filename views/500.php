@@ -8,7 +8,12 @@
 
 <body>
 
-<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; 
+if(array_key_exists("message",$_SESSION)){
+  echo $_SESSION["message"];
+}
+?>
+
   <!--above line is import for nav-->
   <main><h1>Server Error</h1>
   

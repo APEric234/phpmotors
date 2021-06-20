@@ -17,6 +17,11 @@ $action = filter_input(INPUT_POST, 'action');
  if ($passw == NULL){
   $passw = filter_input(INPUT_GET, 'clientPassword');
  }
+ $passw= hash("md5",$passw);
+ $passn = filter_input(INPUT_POST, 'newPassword'); 
+ if ($passn == NULL){
+  $passn = filter_input(INPUT_GET, 'newPassword');
+ }
  $first = filter_input(INPUT_POST, 'firstName');
 
  if ( $first  == NULL){
@@ -37,37 +42,48 @@ $action = filter_input(INPUT_POST, 'action');
   $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
  }
  $navList .= '</ul>';
+ session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
+    session_start();
  switch ($action){
   case "Logout":
-    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
-    session_start();
     session_destroy();
     session_commit();
   case 'login':
     include 'login.php';
    break;
   case "details":
-    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
-    session_start();
+    
     include 'admin.php';
   
     break;
+    case "passUpdate":
+      $sql = "SELECT id FROM users where username=lower('{$user_name}') and password='{$passw}'"; 
     
+    if(check_if_exists($sql)){
+      update_password($passn);
+    }
+      include 'admin.php';
+      break;
+    case "nameUpdate":
+      update_user($user_name,$first,$last);
+      include 'admin.php';
+      break;
+    
+  case "updateUser":
+    include 'client-update.php';
+    break;
   case "register":
     include 'register.php';
     break;
   case "increaseLevel":
-    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
-    session_start();
     elevate_user($_SESSION["email"]);
     session_commit();
     
     include 'admin.php';
     break;
   case "makenew":
+    
     #create new user
-    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
-    session_start();
     add_user($user_name,$first,$last,$passw);
     session_commit();
     #login new user
@@ -85,11 +101,12 @@ $action = filter_input(INPUT_POST, 'action');
       session_commit();
     };
     include 'admin.php';
+    $_SESSION["first_name"]=$res['first_name'];
+      $_SESSION["last_name"]=$res['last_name'];
+      session_commit();
       break;
   case "checkLogin":
     
-    session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
-    session_start();
     $sql = "SELECT id FROM users where username=lower('{$user_name}') and password='{$passw}'"; 
     
     if(check_if_exists($sql)){
