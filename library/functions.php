@@ -53,7 +53,7 @@ function update_password($password){
     }
   $original_pass=$password;
   $db=phpMotorsConnect();
-  if(preg_match("^(?=.*?[A-Z])(?=.*?\d).*",$password)){
+  if(preg_match("^(?=.*?[A-Z])(?=.*?\d).*",$password) && strlen($password)>=8){
     $password=hash('md5',$password);
 
     $sql = "UPDATE `users` set passw='{$password}' where `username`='{$_SESSION["email"]}'";
