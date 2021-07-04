@@ -10,7 +10,9 @@
 <body>
 
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; 
+if(isset($message)){
+echo "<P>".$message."</P>";}?>
   <!--above line is import for nav-->
   <main>
   <h1> Register</h1>

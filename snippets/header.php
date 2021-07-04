@@ -12,7 +12,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
 
   }else{
 
-    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/?action=login\">My messing account</a>";
+    echo " <div id=\"account\"><a href=\"/phpmotors/accounts/?action=login\">My account</a>";
   }
 
   ?>

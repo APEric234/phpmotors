@@ -1,4 +1,5 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpmotors/library/functions.php";
 
 $action = filter_input(INPUT_POST, 'action');
@@ -36,24 +37,19 @@ $action = filter_input(INPUT_POST, 'action');
 
  require_once '../model/main-model.php';
  $classifications = getClassifications();
- $navList = '<ul>';
- $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
- foreach ($classifications as $classification) {
-  $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
- }
- $navList .= '</ul>';
- session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
+$nav = get_nav($classifications);
+session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
     session_start();
  switch ($action){
   case "Logout":
     session_destroy();
     session_commit();
   case 'login':
-    include 'login.php';
+    include '../views/login.php';
    break;
   case "details":
     
-    include 'admin.php';
+    include '../views/admin.php';
   
     break;
     case "passUpdate":
@@ -62,24 +58,24 @@ $action = filter_input(INPUT_POST, 'action');
     if(check_if_exists($sql)){
       update_password($passn);
     }
-      include 'admin.php';
+      include '../views/admin.php';
       break;
     case "nameUpdate":
       update_user($user_name,$first,$last);
-      include 'admin.php';
+      include '../views/admin.php';
       break;
     
   case "updateUser":
-    include 'client-update.php';
+    include '../views/client-update.php';
     break;
   case "register":
-    include 'register.php';
+    include '../views/register.php';
     break;
   case "increaseLevel":
     elevate_user($_SESSION["email"]);
     session_commit();
     
-    include 'admin.php';
+    include '../views/admin.php';
     break;
   case "makenew":
     
@@ -87,7 +83,7 @@ $action = filter_input(INPUT_POST, 'action');
     add_user($user_name,$first,$last,$passw);
     session_commit();
     #login new user
-    
+    $message="";
     $sql = "SELECT id FROM users where username=lower('{$user_name}') and password='{$passw}'"; 
     
     if(check_if_exists($sql)){
@@ -96,15 +92,20 @@ $action = filter_input(INPUT_POST, 'action');
       $res=get_name($user_name);
       $_SESSION["first_name"]=$res['first_name'];
       $_SESSION["last_name"]=$res['last_name'];
-      
+      $message="";
       $_SESSION["email"]=$res['username'];
       session_commit();
-    };
-    include 'admin.php';
-    $_SESSION["first_name"]=$res['first_name'];
+      include '../views/admin.php';
+      $_SESSION["first_name"]=$res['first_name'];
       $_SESSION["last_name"]=$res['last_name'];
       session_commit();
-      break;
+      
+    }else{
+      $message="the email already exists try again";
+      include '../views/register.php';
+    };
+    
+    break;
   case "checkLogin":
     
     $sql = "SELECT id FROM users where username=lower('{$user_name}') and password='{$passw}'"; 
@@ -122,7 +123,7 @@ $action = filter_input(INPUT_POST, 'action');
       $_SESSION["last_name"]=$res['last_name'];
     break;
   default:
-  include '../views/500.php';
+  #include '../viewss/500.php';
    break;
  }
 

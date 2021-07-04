@@ -1,9 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&display=swap");
 * {
   font-size: 100%;
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Jomhuria", cursive;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+#inv-display-alt img:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 body {
   padding: 0;
   margin: 0;
@@ -132,6 +144,28 @@ img {
   div.about div#upgrades {
     position: relative;
     float: right;
+  }
+  #inv-display {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #inv-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+  #inv-display li img {
+    max-width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
