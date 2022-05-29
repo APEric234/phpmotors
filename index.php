@@ -4,11 +4,11 @@
 session_save_path($_SERVER['DOCUMENT_ROOT'] . '/phpmotors/session');
 
 session_start();
-$action = filter_input(INPUT_POST, 'action',FILTER_SANITIZE_STRING);
+$action = filter_input(INPUT_POST, 'action');
 
  if ($action == NULL){
   
-  $action = filter_input(INPUT_GET, 'action',FILTER_SANITIZE_STRING);
+  $action = filter_input(INPUT_GET, 'action');
  }
  
  require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/library/functions.php';
